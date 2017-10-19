@@ -6,13 +6,13 @@
     android:layout_marginBottom="5dp"
     android:layout_marginRight="5dp"
     android:layout_marginLeft="5dp"
-    android:id="@+id/card_trader">
+    android:id="@+id/card_trade">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
-        android:id="@+id/relative_layout_trader">
+        android:id="@+id/relative_layout_trade">
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -20,19 +20,26 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentTop="true"
             android:layout_marginRight="16dp"
-            android:src="@drawable/ic_account_circle_black"/>
+            android:src="@drawable/ic_share_black"/>
         <TextView
-            android:id="@+id/tv_trader_name"
+            android:id="@+id/tv_trade_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/iv_trader_image"
             android:layout_alignParentTop="true"
             android:textSize="15sp" />
         <TextView
-            android:id="@+id/tv_trader_id"
+            android:id="@+id/tv_trade_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/iv_trader_image"
             android:layout_below="@+id/tv_trader_name" />
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@null"
+            android:src="@drawable/ic_chevron_right_black"
+            android:layout_centerVertical="true"/>
     </RelativeLayout>
 </android.support.v7.widget.CardView>

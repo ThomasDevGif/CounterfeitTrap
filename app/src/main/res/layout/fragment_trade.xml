@@ -2,16 +2,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.thomastournoux.counterfeittrap.fragment.RolexFragment">
+    tools:context="com.example.thomastournoux.counterfeittrap.fragment.TradeFragment">
 
     <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:id="@+id/progressbar_rolex"/>
+        android:id="@+id/progressbar_trade"/>
 
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/list_rolex"
+        android:id="@+id/list_trade"
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

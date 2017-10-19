@@ -7,38 +7,42 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.thomastournoux.counterfeittrap.R;
-import com.example.thomastournoux.counterfeittrap.fragment.TraderFragment;
-import com.example.thomastournoux.counterfeittrap.object.Trader;
+import com.example.thomastournoux.counterfeittrap.fragment.TradeFragment;
+import com.example.thomastournoux.counterfeittrap.object.Trade;
+import com.example.thomastournoux.counterfeittrap.util.Information;
 
 import java.util.List;
 
-public class TraderListAdapter extends RecyclerView.Adapter<TraderListAdapter.ViewHolder>
+public class TradeListAdapter extends RecyclerView.Adapter<TradeListAdapter.ViewHolder>
         implements AdapterView.OnItemSelectedListener {
 
     // Variables
-    private final static String TAG = "TraderListAdapter";
+    private final static String TAG = "TradeListAdapter";
     private Context mContext;
-    private TraderFragment mTraderFragment;
+    private TradeFragment mTradeFragment;
     // User list data
-    private List<Trader> mDataset;
+    private List<Trade> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public Trader mTrader;
+        public Trade mTrade;
         public CardView mCard;
-        public TextView mTraderName, mTraderId;
+        public RelativeLayout mRelativeLayout;
+        public TextView mTradeId, mTradeDate;
 
         public ViewHolder(View v) {
             super(v);
             // Retrieve all field view instances
-            mCard = (CardView)itemView.findViewById(R.id.card_rolex);
-            mTraderName = (TextView)itemView.findViewById(R.id.tv_trader_name);
-            mTraderId = (TextView)itemView.findViewById(R.id.tv_trader_id);
+            mCard = (CardView)itemView.findViewById(R.id.card_trade);
+            mRelativeLayout = (RelativeLayout)itemView.findViewById(R.id.relative_layout_trade);
+            mTradeId = (TextView)itemView.findViewById(R.id.tv_trade_id);
+            mTradeDate = (TextView)itemView.findViewById(R.id.tv_trade_date);
         }
     }
 
@@ -46,22 +50,22 @@ public class TraderListAdapter extends RecyclerView.Adapter<TraderListAdapter.Vi
      * Provide a suitable constructor (depends on the kind of dataset)
      * @param mContext Context
      */
-    public TraderListAdapter(Context mContext, TraderFragment traderFragment, List<Trader> traders) {
+    public TradeListAdapter(Context mContext, TradeFragment tradeFragment, List<Trade> trades) {
         this.mContext = mContext;
-        this.mTraderFragment = traderFragment;
-        mDataset = traders;
+        this.mTradeFragment = tradeFragment;
+        mDataset = trades;
     }
 
     /**
      * Create new views (invoked by the layout manager)
      */
     @Override
-    public TraderListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TradeListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_trader, parent, false);
+                .inflate(R.layout.card_trade, parent, false);
 
-        return new TraderListAdapter.ViewHolder(v);
+        return new TradeListAdapter.ViewHolder(v);
     }
 
     /**
@@ -70,13 +74,16 @@ public class TraderListAdapter extends RecyclerView.Adapter<TraderListAdapter.Vi
      * @param position Position
      */
     @Override
-    public void onBindViewHolder(final TraderListAdapter.ViewHolder holder, final int position) {
-        holder.mTrader = mDataset.get(position);
-
-        String name = holder.mTrader.getFirstName()
-                + " " + holder.mTrader.getLastName().toUpperCase();
-        holder.mTraderName.setText(name);
-        holder.mTraderId.setText(mDataset.get(position).getTradeId());
+    public void onBindViewHolder(final TradeListAdapter.ViewHolder holder, final int position) {
+        holder.mTrade = mDataset.get(position);
+        holder.mTradeId.setText(mDataset.get(position).getTransactionId());
+        holder.mTradeDate.setText(mDataset.get(position).getTimestamp());
+        holder.mRelativeLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Information.showToast(mContext, "Nope :p");
+            }
+        });
     }
 
     /**

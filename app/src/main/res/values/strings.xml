@@ -5,11 +5,13 @@
     <string name="ip">148.100.98.229</string>
     <string name="port">3000</string>
 
-    <string name="error_connection">Connection failed</string>
+    <string name="error_connection_failed">Connection failed</string>
+    <string name="error_no_connection">Check your internet connection</string>
 
     <string name="home">Home</string>
     <string name="rolex">Rolex</string>
     <string name="trader">Owners</string>
+    <string name="trade">Trades</string>
 
     <!-- Home -->
     <string name="home_description">Welcome to Counterfeit Trap ! We will help you  verify the authenticity of many differents products. Please check our database to compare your product to ours in the Rolex tab or simply add a new one with valid characteristics.</string>

@@ -9,10 +9,19 @@ import retrofit2.http.POST;
 
 public interface RestAPI {
 
+    // Rolex
     @GET("org.conterfeittrap.model.Rolex")
     Call<ResponseBody> getAllRolex();
 
     @POST("org.conterfeittrap.model.Rolex")
     Call<ResponseBody> createRolex(@Body RequestBody rolex);
+
+    // Trader
+    @GET("org.conterfeittrap.model.Trader")
+    Call<ResponseBody> getAllTraders();
+
+    // Trade
+    @GET("org.conterfeittrap.model.Trade")
+    Call<ResponseBody> getAllTrades();
 
 }

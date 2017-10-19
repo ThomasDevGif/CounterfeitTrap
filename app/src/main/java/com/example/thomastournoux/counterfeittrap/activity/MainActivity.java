@@ -10,6 +10,7 @@ import android.view.View;
 import com.example.thomastournoux.counterfeittrap.R;
 import com.example.thomastournoux.counterfeittrap.fragment.HomeFragment;
 import com.example.thomastournoux.counterfeittrap.fragment.RolexFragment;
+import com.example.thomastournoux.counterfeittrap.fragment.TradeFragment;
 import com.example.thomastournoux.counterfeittrap.fragment.TraderFragment;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private RolexFragment mRolexFragment;
     private TraderFragment mTraderFragment;
+    private TradeFragment mTradeFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
         mHomeFragment = HomeFragment.newInstance();
         mRolexFragment = RolexFragment.newInstance();
         mTraderFragment = TraderFragment.newInstance();
+        mTradeFragment = TradeFragment.newInstance();
     }
 
     /**
@@ -97,7 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 .withIcon(GoogleMaterial.Icon.gmd_watch);
         final PrimaryDrawerItem itemTrader = new PrimaryDrawerItem()
                 .withIdentifier(3).withName(R.string.trader)
-                .withIcon(GoogleMaterial.Icon.gmd_person);
+                .withIcon(GoogleMaterial.Icon.gmd_group);
+        final PrimaryDrawerItem itemTrade = new PrimaryDrawerItem()
+                .withIdentifier(4).withName(R.string.trade)
+                .withIcon(GoogleMaterial.Icon.gmd_share);
 
         // Create the drawer and remember the `Drawer` result object
         mMaterialDrawer = new DrawerBuilder()
@@ -107,7 +113,8 @@ public class MainActivity extends AppCompatActivity {
                 .addDrawerItems(
                         itemHome,
                         itemRolex,
-                        itemTrader
+                        itemTrader,
+                        itemTrade
                 )
                 .withOnDrawerItemClickListener(new Drawer.OnDrawerItemClickListener() {
                     @Override
@@ -132,6 +139,11 @@ public class MainActivity extends AppCompatActivity {
                             case 3:
                                 fragmentTransaction.replace(R.id.fragment_container,
                                         mTraderFragment);
+                                fragmentTransaction.commit();
+                                break;
+                            case 4:
+                                fragmentTransaction.replace(R.id.fragment_container,
+                                        mTradeFragment);
                                 fragmentTransaction.commit();
                                 break;
                         }

@@ -46,7 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     Information.createSnackBar(getParent(),
-                            getResources().getString(R.string.error_connection),
+                            getResources().getString(R.string.error_connection_failed),
                             ALERT, Snackbar.LENGTH_LONG, null, null);
                     Log.e(TAG, "ERROR: " + response.code());
                 }
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Information.createSnackBar(getParent(),
-                        getResources().getString(R.string.error_connection),
+                        getResources().getString(R.string.error_no_connection),
                         ALERT, Snackbar.LENGTH_LONG, null, null);
                 Log.e(TAG, "ERROR: " + t.getMessage());
             }

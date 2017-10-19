@@ -4,9 +4,17 @@
     android:layout_height="match_parent"
     tools:context="com.example.thomastournoux.counterfeittrap.fragment.TraderFragment">
 
-    <TextView
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TRADER VIEW"/>
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/progressbar_trader"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list_trader"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
 
 </FrameLayout>
