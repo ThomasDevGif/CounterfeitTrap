@@ -1,6 +1,7 @@
 package com.example.thomastournoux.counterfeittrap.adpater;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.thomastournoux.counterfeittrap.R;
+import com.example.thomastournoux.counterfeittrap.activity.TradeActivity;
+import com.example.thomastournoux.counterfeittrap.application.UserApplication;
 import com.example.thomastournoux.counterfeittrap.fragment.TradeFragment;
 import com.example.thomastournoux.counterfeittrap.object.Trade;
 import com.example.thomastournoux.counterfeittrap.util.Information;
@@ -76,12 +79,14 @@ public class TradeListAdapter extends RecyclerView.Adapter<TradeListAdapter.View
     @Override
     public void onBindViewHolder(final TradeListAdapter.ViewHolder holder, final int position) {
         holder.mTrade = mDataset.get(position);
-        holder.mTradeId.setText(mDataset.get(position).getTransactionId());
+        holder.mTradeId.setText("Transaction");
         holder.mTradeDate.setText(mDataset.get(position).getTimestamp());
         holder.mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Information.showToast(mContext, "Nope :p");
+                UserApplication.setSelectedTrade(holder.mTrade);
+                Intent intent = new Intent(mContext, TradeActivity.class);
+                mContext.startActivity(intent);
             }
         });
     }

@@ -1,17 +1,15 @@
 package com.example.thomastournoux.counterfeittrap.activity;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 
 import com.example.thomastournoux.counterfeittrap.R;
 import com.example.thomastournoux.counterfeittrap.network.RestAPI;
 import com.example.thomastournoux.counterfeittrap.network.RestConnectorBuilder;
 import com.example.thomastournoux.counterfeittrap.util.Information;
-
-import java.io.IOException;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -28,7 +26,13 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getSupportActionBar().hide();
         setContentView(R.layout.activity_login);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         checkConnection();
     }
 

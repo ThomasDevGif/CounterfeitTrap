@@ -6,6 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Path;
 
 public interface RestAPI {
 
@@ -19,6 +20,9 @@ public interface RestAPI {
     // Trader
     @GET("org.conterfeittrap.model.Trader")
     Call<ResponseBody> getAllTraders();
+
+    @GET("org.conterfeittrap.model.Trader/{id}")
+    Call<ResponseBody> getTraderById(@Path("id") String traderId);
 
     // Trade
     @GET("org.conterfeittrap.model.Trade")

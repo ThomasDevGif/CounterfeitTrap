@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/iv_trader_image"
-            android:layout_below="@+id/tv_trader_name" />
+            android:layout_below="@+id/tv_trade_id" />
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

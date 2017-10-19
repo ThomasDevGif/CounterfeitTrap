@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thomastournoux.counterfeittrap.activity.RolexActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/iv_rolex"/>
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/tv_rolex_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rolex id"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Brand"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_serialNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serial number"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_weightUnity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Weight unity"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_secondHandSpecifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Second hand specifications"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_materialsSpecifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Materials specifications"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_cyclopeanObjective"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cyclopean objective"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_remontoireChangeDateAtSixHour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remontoire change date at six hour"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_backTransparent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back transparent"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_braceletMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bracelet material"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_sealing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sealing"/>
+
+        <include layout="@layout/divider_item"/>
+
+        <TextView
+            android:id="@+id/tv_rolex_productDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ProductDate"/>
+
+        <android.support.v4.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+    </LinearLayout>
+</ScrollView>

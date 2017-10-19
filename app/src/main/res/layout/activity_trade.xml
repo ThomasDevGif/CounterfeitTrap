@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.thomastournoux.counterfeittrap.activity.TradeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/iv_trade_rolex"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_watch_black"/>
+            <TextView
+                android:id="@+id/tv_trade_rolex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_rolex"
+                android:layout_alignParentTop="true"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_rolex"
+                android:layout_below="@+id/tv_trade_rolex"
+                android:text="rolex"/>
+        </RelativeLayout>
+
+        <include layout="@layout/divider_item"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/iv_trade_owner"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_account_circle_black"/>
+            <TextView
+                android:id="@+id/tv_trade_owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_owner"
+                android:layout_alignParentTop="true"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_owner"
+                android:layout_below="@+id/tv_trade_owner"
+                android:text="New owner"/>
+        </RelativeLayout>
+
+        <include layout="@layout/divider_item"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/iv_trade_transactionId"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_share_black"/>
+            <TextView
+                android:id="@+id/tv_trade_transactionId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_transactionId"
+                android:layout_alignParentTop="true"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_transactionId"
+                android:layout_below="@+id/tv_trade_transactionId"
+                android:text="Transaction id"/>
+        </RelativeLayout>
+
+        <include layout="@layout/divider_item"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+            <ImageView
+                android:id="@+id/iv_trade_date"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="16dp"
+                android:src="@drawable/ic_date_range_black"/>
+            <TextView
+                android:id="@+id/tv_trade_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_date"
+                android:layout_alignParentTop="true"
+                android:textSize="15sp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/iv_trade_date"
+                android:layout_below="@+id/tv_trade_date"
+                android:text="Transaction date"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+</ScrollView>

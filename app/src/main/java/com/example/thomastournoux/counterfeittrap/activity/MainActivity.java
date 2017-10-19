@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initializeDrawer() {
         mProfileDrawerItem = new ProfileDrawerItem()
+                .withIcon(GoogleMaterial.Icon.gmd_account_circle)
                 .withName("EPSI Workshop")
                 .withIdentifier(100);
 
@@ -79,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 .withSelectionListEnabled(false)
                 .withSelectionListEnabledForSingleProfile(true)
                 .withSelectionSecondLineShown(true)
-                .withHeaderBackground(R.drawable.img_header)
+                .withHeaderBackground(R.drawable.wallpaper)
                 .addProfiles(
                         mProfileDrawerItem
                 )

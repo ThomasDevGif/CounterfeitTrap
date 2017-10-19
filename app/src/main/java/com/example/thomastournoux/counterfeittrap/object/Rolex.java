@@ -1,24 +1,22 @@
 package com.example.thomastournoux.counterfeittrap.object;
 
-import com.google.gson.annotations.Expose;
-
 public class Rolex {
 
-    @Expose private String $class;
-    @Expose private String rolexId;
-    @Expose private String brand;
-    @Expose private String serialNumber;
-    @Expose private String visual;
-    @Expose private String weight;
-    @Expose private String weightUnity;
-    @Expose private String secondHandSpecifications;
-    @Expose private String materialsSpecifications;
-    @Expose private String cyclopeanObjective;
-    @Expose private String remontoireChangeDateAtSixHour;
-    @Expose private String backTransparent;
-    @Expose private String braceletMaterial;
-    @Expose private String sealing;
-    @Expose private String productDate;
+    private String $class;
+    private String rolexId;
+    private String brand;
+    private String serialNumber;
+    private String visual;
+    private String weight;
+    private String weightUnity;
+    private String secondHandSpecifications;
+    private String materialsSpecifications;
+    private String cyclopeanObjective;
+    private String remontoireChangeDateAtSixHour;
+    private String backTransparent;
+    private String braceletMaterial;
+    private String sealing;
+    private String productDate;
 
     public Rolex() {
 

@@ -1,6 +1,7 @@
 package com.example.thomastournoux.counterfeittrap.adpater;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,13 +11,13 @@ import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.thomastournoux.counterfeittrap.R;
+import com.example.thomastournoux.counterfeittrap.activity.RolexActivity;
+import com.example.thomastournoux.counterfeittrap.application.UserApplication;
 import com.example.thomastournoux.counterfeittrap.fragment.RolexFragment;
 import com.example.thomastournoux.counterfeittrap.object.Rolex;
 import com.example.thomastournoux.counterfeittrap.util.CircleTransform;
-import com.example.thomastournoux.counterfeittrap.util.Information;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -94,7 +95,9 @@ public class RolexListAdapter extends RecyclerView.Adapter<RolexListAdapter.View
         holder.mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Information.showToast(mContext, "Nope :p");
+                UserApplication.setSelectedRolex(holder.mRolex);
+                Intent intent = new Intent(mContext, RolexActivity.class);
+                mContext.startActivity(intent);
             }
         });
     }
