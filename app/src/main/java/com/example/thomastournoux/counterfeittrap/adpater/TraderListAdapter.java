@@ -7,49 +7,41 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.thomastournoux.counterfeittrap.R;
-import com.example.thomastournoux.counterfeittrap.fragment.RolexFragment;
-import com.example.thomastournoux.counterfeittrap.object.Rolex;
-import com.example.thomastournoux.counterfeittrap.util.CircleTransform;
-import com.example.thomastournoux.counterfeittrap.util.Information;
-import com.squareup.picasso.Picasso;
+import com.example.thomastournoux.counterfeittrap.fragment.TraderFragment;
+import com.example.thomastournoux.counterfeittrap.object.Trader;
 
 import java.util.List;
 
-
-public class RolexListAdapter extends RecyclerView.Adapter<RolexListAdapter.ViewHolder>
+public class TraderListAdapter extends RecyclerView.Adapter<TraderListAdapter.ViewHolder>
         implements AdapterView.OnItemSelectedListener {
 
     // Variables
-    private final static String TAG = "RolexListAdapter";
+    private final static String TAG = "TraderListAdapter";
     private Context mContext;
-    private RolexFragment mRolexFragment;
+    private TraderFragment mTraderFragment;
     // User list data
-    private List<Rolex> mDataset;
+    private List<Trader> mDataset;
 
     // Provide a reference to the views for each data item
     // Complex data items may need more than one view per item, and
     // you provide access to all the views for a data item in a view holder
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        public Rolex mRolex;
+        public Trader mTrader;
         public CardView mCard;
         public RelativeLayout mRelativeLayout;
-        public ImageView mRolexImage;
-        public TextView mRolexId, mRolexSerialNumber;
+        public TextView mTraderName, mTraderId;
 
         public ViewHolder(View v) {
             super(v);
             // Retrieve all field view instances
             mCard = (CardView)itemView.findViewById(R.id.card_rolex);
-            mRelativeLayout = (RelativeLayout)itemView.findViewById(R.id.relative_layout_rolex);
-            mRolexImage = (ImageView)itemView.findViewById(R.id.iv_rolex_image);
-            mRolexId = (TextView)itemView.findViewById(R.id.tv_rolex_id);
-            mRolexSerialNumber = (TextView)itemView.findViewById(R.id.tv_rolex_serial_number);
+            mRelativeLayout = (RelativeLayout)itemView.findViewById(R.id.relative_layout_trader);
+            mTraderName = (TextView)itemView.findViewById(R.id.tv_trader_name);
+            mTraderId = (TextView)itemView.findViewById(R.id.tv_trader_id);
         }
     }
 
@@ -57,22 +49,22 @@ public class RolexListAdapter extends RecyclerView.Adapter<RolexListAdapter.View
      * Provide a suitable constructor (depends on the kind of dataset)
      * @param mContext Context
      */
-    public RolexListAdapter(Context mContext, RolexFragment rolexFragment, List<Rolex> rolexList) {
+    public TraderListAdapter(Context mContext, TraderFragment traderFragment, List<Trader> traders) {
         this.mContext = mContext;
-        this.mRolexFragment = rolexFragment;
-        mDataset = rolexList;
+        this.mTraderFragment = traderFragment;
+        mDataset = traders;
     }
 
     /**
      * Create new views (invoked by the layout manager)
      */
     @Override
-    public RolexListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public TraderListAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.card_rolex, parent, false);
+                .inflate(R.layout.card_trader, parent, false);
 
-        return new RolexListAdapter.ViewHolder(v);
+        return new TraderListAdapter.ViewHolder(v);
     }
 
     /**
@@ -81,20 +73,17 @@ public class RolexListAdapter extends RecyclerView.Adapter<RolexListAdapter.View
      * @param position Position
      */
     @Override
-    public void onBindViewHolder(final RolexListAdapter.ViewHolder holder, final int position) {
-        holder.mRolex = mDataset.get(position);
+    public void onBindViewHolder(final TraderListAdapter.ViewHolder holder, final int position) {
+        holder.mTrader = mDataset.get(position);
 
-        Picasso.with(mContext)
-                .load(holder.mRolex.getVisual())
-                .transform(new CircleTransform())
-                .into(holder.mRolexImage);
-
-        holder.mRolexId.setText(mDataset.get(position).getRolexId());
-        holder.mRolexSerialNumber.setText(mDataset.get(position).getSerialNumber());
+        String name = holder.mTrader.getFirstName()
+                + " " + holder.mTrader.getLastName().toUpperCase();
+        holder.mTraderName.setText(name);
+        holder.mTraderId.setText(mDataset.get(position).getTradeId());
         holder.mRelativeLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Information.showToast(mContext, "Nope :p");
+                // Do nothing
             }
         });
     }

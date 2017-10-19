@@ -1,9 +1,6 @@
 package com.example.thomastournoux.counterfeittrap.activity;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +12,6 @@ import com.example.thomastournoux.counterfeittrap.fragment.HomeFragment;
 import com.example.thomastournoux.counterfeittrap.fragment.RolexFragment;
 import com.example.thomastournoux.counterfeittrap.fragment.TraderFragment;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
-import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
 import com.mikepenz.materialdrawer.AccountHeaderBuilder;
 import com.mikepenz.materialdrawer.Drawer;
@@ -53,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
      */
     private void initializeToolbar(){
         toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(getResources().getString(R.string.app_name));
         setSupportActionBar(toolbar);
     }
 

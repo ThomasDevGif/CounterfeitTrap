@@ -11,7 +11,10 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:padding="16dp"
+        android:id="@+id/relative_layout_rolex"
+        android:clickable="true"
+        android:background="?attr/selectableItemBackground">
         <ImageView
             android:layout_width="48dp"
             android:layout_height="48dp"

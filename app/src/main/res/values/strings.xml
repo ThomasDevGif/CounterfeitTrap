@@ -9,6 +9,18 @@
 
     <string name="home">Home</string>
     <string name="rolex">Rolex</string>
-    <string name="trader">Owner</string>
+    <string name="trader">Owners</string>
+
+    <!-- Home -->
+    <string name="home_description">Welcome to Counterfeit Trap ! We will help you  verify the authenticity of many differents products. Please check our database to compare your product to ours in the Rolex tab or simply add a new one with valid characteristics.</string>
+
+    <!-- Rolex -->
+    <string name="add_rolex">Add a rolex</string>
+    <string name="rolex_sent_ok">Rolex sent successfully</string>
+    <string name="rolex_sent_error">Rolex sent with error</string>
+
     <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

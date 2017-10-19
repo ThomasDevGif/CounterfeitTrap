@@ -1,8 +1,9 @@
 package com.example.thomastournoux.counterfeittrap.fragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.constraint.solver.SolverVariable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,13 +21,8 @@ import com.example.thomastournoux.counterfeittrap.network.RestConnectorBuilder;
 import com.example.thomastournoux.counterfeittrap.object.Rolex;
 import com.example.thomastournoux.counterfeittrap.util.Information;
 import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONObject;
-
-import java.io.IOException;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
@@ -44,6 +40,7 @@ public class RolexFragment extends Fragment {
     private static final String TAG = "RolexFragment";
     private ProgressBar mProgressBar;
     private RecyclerView mRecyclerView;
+    private FloatingActionButton mFabAddRolex;
 
     public RolexFragment() {
         // Required empty public constructor
@@ -99,6 +96,14 @@ public class RolexFragment extends Fragment {
         mRecyclerView = (RecyclerView) getActivity().findViewById(R.id.list_rolex);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getContext());
         mRecyclerView.setLayoutManager(mLayoutManager);
+        // ProgressBar
+        mFabAddRolex = (FloatingActionButton) getActivity().findViewById(R.id.fab_rolex);
+        mFabAddRolex.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createRolex();
+            }
+        });
     }
 
     /**
@@ -140,17 +145,41 @@ public class RolexFragment extends Fragment {
 
         try {
             String json = response.body().string();
-
             Type collectionType = new TypeToken<List<Rolex>>(){}.getType();
             rolexList = gson.fromJson(json, collectionType);
-
         } catch (Exception e) {
             Log.e(TAG, "ERROR: " + e.getMessage());
         }
 
         mProgressBar.setVisibility(View.GONE);
-        RecyclerView.Adapter mAdapter = new RolexListAdapter(getContext(), rolexList);
+        RecyclerView.Adapter mAdapter = new RolexListAdapter(getContext(), this, rolexList);
         mRecyclerView.setAdapter(mAdapter);
     }
 
+    /**
+     * Create rolex on blockchain api
+     */
+    private void createRolex() {
+//        LayoutInflater inflater = getActivity().getLayoutInflater();
+//        View dialogView = inflater.inflate(R.layout.dialog_create_rolex, null);
+//
+//        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+//        builder.setIcon(getContext().getResources().getDrawable(R.drawable.ic_watch_black))
+//                .setTitle(getContext().getResources().getString(R.string.add_rolex))
+//                .setView(dialogView)
+//                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // continue with delete
+//                    }
+//                })
+//                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // do nothing
+//                    }
+//                })
+//                .setIcon(android.R.drawable.ic_dialog_alert)
+//                .show();
+//
+//        EditText editText = (EditText) dialogView.findViewById(R.id.brand);
+    }
 }
