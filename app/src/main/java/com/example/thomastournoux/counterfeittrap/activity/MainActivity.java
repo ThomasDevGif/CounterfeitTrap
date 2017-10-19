@@ -4,12 +4,16 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.thomastournoux.counterfeittrap.R;
+import com.example.thomastournoux.counterfeittrap.fragment.HomeFragment;
+import com.example.thomastournoux.counterfeittrap.fragment.RolexFragment;
+import com.example.thomastournoux.counterfeittrap.fragment.TraderFragment;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
 import com.mikepenz.materialdrawer.AccountHeader;
@@ -29,12 +33,18 @@ public class MainActivity extends AppCompatActivity {
     private AccountHeader mAccountHeader;
     private ProfileDrawerItem mProfileDrawerItem;
 
+    // Fragment
+    private HomeFragment mHomeFragment;
+    private RolexFragment mRolexFragment;
+    private TraderFragment mTraderFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         initializeToolbar();
+        initializeFragment();
         initializeDrawer();
     }
 
@@ -46,6 +56,18 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
     }
 
+    /**
+     * Instantiate fragments
+     */
+    private void initializeFragment() {
+        mHomeFragment = HomeFragment.newInstance();
+        mRolexFragment = RolexFragment.newInstance();
+        mTraderFragment = TraderFragment.newInstance();
+    }
+
+    /**
+     * Initialize drawer menu
+     */
     private void initializeDrawer() {
         mProfileDrawerItem = new ProfileDrawerItem().withName("")
                 .withEmail("test@test.com")
@@ -78,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 .withIdentifier(1).withName(R.string.home)
                 .withIcon(GoogleMaterial.Icon.gmd_home);
         final PrimaryDrawerItem itemRolex = new PrimaryDrawerItem()
-                .withIdentifier(1).withName(R.string.rolex)
+                .withIdentifier(2).withName(R.string.rolex)
                 .withIcon(GoogleMaterial.Icon.gmd_watch);
         final PrimaryDrawerItem itemTrader = new PrimaryDrawerItem()
-                .withIdentifier(2).withName(R.string.trader)
+                .withIdentifier(3).withName(R.string.trader)
                 .withIcon(GoogleMaterial.Icon.gmd_person);
 
         // Create the drawer and remember the `Drawer` result object
@@ -98,10 +120,26 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onItemClick(View view, int position, IDrawerItem drawerItem) {
 
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
                         // Do something with the clicked item
                         Long id = drawerItem.getIdentifier();
                         switch (Integer.valueOf(id.intValue())) {
                             case 1:
+                                fragmentTransaction.replace(R.id.fragment_container,
+                                        mHomeFragment);
+                                fragmentTransaction.commit();
+                                break;
+                            case 2:
+                                fragmentTransaction.replace(R.id.fragment_container,
+                                        mRolexFragment);
+                                fragmentTransaction.commit();
+                                break;
+                            case 3:
+                                fragmentTransaction.replace(R.id.fragment_container,
+                                        mTraderFragment);
+                                fragmentTransaction.commit();
                                 break;
                         }
 
