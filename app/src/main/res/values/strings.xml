@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">CounterfeitTrap</string>
+
+    <string name="http">http://</string>
+    <string name="ip">148.100.99.181</string>
+    <string name="port">8080</string>
+
+</resources>
