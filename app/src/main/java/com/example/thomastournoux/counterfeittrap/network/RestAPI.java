@@ -7,6 +7,6 @@ import retrofit2.http.GET;
 public interface RestAPI {
 
     @GET("org.conterfeittrap.model.rolex.RolexWatch")
-    Call<ResponseBody> getRolex();
+    Call<ResponseBody> getAllRolex();
 
 }
