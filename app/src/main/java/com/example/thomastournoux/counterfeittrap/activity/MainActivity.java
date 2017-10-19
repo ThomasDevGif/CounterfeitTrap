@@ -69,13 +69,9 @@ public class MainActivity extends AppCompatActivity {
      * Initialize drawer menu
      */
     private void initializeDrawer() {
-        mProfileDrawerItem = new ProfileDrawerItem().withName("")
-                .withEmail("test@test.com")
+        mProfileDrawerItem = new ProfileDrawerItem()
+                .withName("EPSI Workshop")
                 .withIdentifier(100);
-
-        Drawable drawableFont = new IconicsDrawable(getApplicationContext())
-                .icon(GoogleMaterial.Icon.gmd_highlight_off)
-                .color(getResources().getColor(R.color.white));
 
         // Create the AccountHeader
         mAccountHeader = new AccountHeaderBuilder()
