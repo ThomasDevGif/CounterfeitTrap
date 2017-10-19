@@ -19,7 +19,7 @@ public class RestConnectorBuilder {
     public static RestAPI build(Context context) {
         RestAPI restAdapter;
 
-        final String ipAddress = "http://148.100.99.181:8080";
+        final String ipAddress = "http://148.100.98.229:8080";
 
         String serverAddress =  context.getResources().getString(R.string.http)
                 + context.getResources().getString(R.string.ip) + ":"
