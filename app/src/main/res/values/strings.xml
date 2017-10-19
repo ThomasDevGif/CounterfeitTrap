@@ -3,7 +3,7 @@
 
     <string name="http">http://</string>
     <string name="ip">148.100.98.229</string>
-    <string name="port">8080</string>
+    <string name="port">3000</string>
 
     <string name="error_connection">Connection failed</string>
 

@@ -11,6 +11,8 @@ import com.example.thomastournoux.counterfeittrap.network.RestAPI;
 import com.example.thomastournoux.counterfeittrap.network.RestConnectorBuilder;
 import com.example.thomastournoux.counterfeittrap.util.Information;
 
+import java.io.IOException;
+
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -52,6 +54,9 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Information.createSnackBar(getParent(),
+                        getResources().getString(R.string.error_connection),
+                        ALERT, Snackbar.LENGTH_LONG, null, null);
                 Log.e(TAG, "ERROR: " + t.getMessage());
             }
         });

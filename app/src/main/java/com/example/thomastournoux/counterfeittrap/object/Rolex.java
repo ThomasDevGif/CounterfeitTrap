@@ -1,27 +1,31 @@
 package com.example.thomastournoux.counterfeittrap.object;
 
+import com.google.gson.annotations.Expose;
+
 public class Rolex {
 
-    private String rolexId;
-    private String brand;
-    private String serialNumber;
-    private String visual;
-    private String weight;
-    private String weightUnity;
-    private String secondHandSpecifications;
-    private String materialsSpecifications;
-    private String cyclopeanObjective;
-    private String remontoireChangeDateAtSixHour;
-    private String backTransparent;
-    private String braceletMaterial;
-    private String sealing;
-    private String productDate;
+    @Expose private String $class;
+    @Expose private String rolexId;
+    @Expose private String brand;
+    @Expose private String serialNumber;
+    @Expose private String visual;
+    @Expose private String weight;
+    @Expose private String weightUnity;
+    @Expose private String secondHandSpecifications;
+    @Expose private String materialsSpecifications;
+    @Expose private String cyclopeanObjective;
+    @Expose private String remontoireChangeDateAtSixHour;
+    @Expose private String backTransparent;
+    @Expose private String braceletMaterial;
+    @Expose private String sealing;
+    @Expose private String productDate;
 
     public Rolex() {
 
     }
 
-    public Rolex(String rolexId, String brand, String serialNumber, String visual, String weight, String weightUnity, String secondHandSpecifications, String materialsSpecifications, String cyclopeanObjective, String remontoireChangeDateAtSixHour, String backTransparent, String braceletMaterial, String sealing, String productDate) {
+    public Rolex(String $class, String rolexId, String brand, String serialNumber, String visual, String weight, String weightUnity, String secondHandSpecifications, String materialsSpecifications, String cyclopeanObjective, String remontoireChangeDateAtSixHour, String backTransparent, String braceletMaterial, String sealing, String productDate) {
+        this.$class = $class;
         this.rolexId = rolexId;
         this.brand = brand;
         this.serialNumber = serialNumber;

@@ -19,11 +19,11 @@ public class RestConnectorBuilder {
     public static RestAPI build(Context context) {
         RestAPI restAdapter;
 
-        final String ipAddress = "http://148.100.98.229:8080";
+        final String ipAddress = "http://148.100.98.229:3000";
 
         String serverAddress =  context.getResources().getString(R.string.http)
                 + context.getResources().getString(R.string.ip) + ":"
-                + context.getResources().getString(R.string.port) + "/";
+                + context.getResources().getString(R.string.port) + "/api/";
 
         OkHttpClient client = null;
         client = new OkHttpClient.Builder()

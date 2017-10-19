@@ -4,6 +4,12 @@
     android:layout_height="match_parent"
     tools:context="com.example.thomastournoux.counterfeittrap.fragment.RolexFragment">
 
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/progressbar_rolex"/>
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/list_rolex"
         android:layout_marginTop="5dp"
